@@ -1,0 +1,19 @@
+# 🧠 Ignore data and models
+data/
+models/
+outputs/
+*.pt
+*.pth
+*.png
+
+# 🧪 Ignore testing/cache files
+__pycache__/
+*.py[cod]
+
+# 🛠️ Ignore your virtual environment
+venv/
+.env/
+
+# 💻 macOS system files
+.DS_Store
+
