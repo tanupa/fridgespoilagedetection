@@ -1,14 +1,13 @@
-# 🧠 Ignore data and models
-data/
-models/
-outputs/
-*.pt
-*.pth
+# 🧠 Ignore large training outputs (keep important data and models)
+runs/
+outputs/crops/
+outputs/batch_results/
 *.png
 
 # 🧪 Ignore testing/cache files
 __pycache__/
 *.py[cod]
+*.pyc
 
 # 🛠️ Ignore your virtual environment
 venv/
@@ -17,4 +16,9 @@ venv/
 
 # 💻 macOS system files
 .DS_Store
+
+# 📝 Keep these important files:
+# ✅ data/ - Important datasets
+# ✅ models/ - Trained models for demo
+# ✅ outputs/tsne/ - Visualization outputs
 

@@ -7,11 +7,9 @@ import io
 
 app = FastAPI()
 
-# Load TorchScript model
 model = torch.jit.load("models/classifier_traced.pt", map_location="cpu")
 model.eval()
 
-# Define transform
 transform = transforms.Compose([
     transforms.Resize((128, 128)),
     transforms.ToTensor()
