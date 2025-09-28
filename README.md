@@ -94,7 +94,6 @@ conda activate fridge_detection
 # 4. Test the installation
 python scripts/detection/enhanced_detection.py --help
 ```
-
 ### **Manual Setup**
 ```bash
 # 1. Create conda environment
@@ -105,7 +104,7 @@ conda activate fridge_detection
 pip install -r requirements.txt
 
 # 3. Test installation
-python -c "import torch, cv2, ultralytics; print('✅ All dependencies working!')"
+python -c "import torch, cv2, ultralytics; print(' All dependencies working!')"
 ```
 
 ### **Running the Application**
@@ -129,17 +128,12 @@ python scripts/detection/train_yolov8.py --model yolov8n.pt --data data/detectio
 
 ### **Roboflow Dataset**
 - **Source**: [Fridge objects dataset](https://universe.roboflow.com/fooddetection-essdj/fridge-objects/dataset/12)
-- **License**: CC BY 4.0
-- **Preprocessing**: Auto-orientation, resize to 640x640
-- **Augmentation**: 50% horizontal/vertical flip, random crop (0-30%), rotation (-30° to +30°)
 
 ### **Classification Dataset**
 - **Format**: Fresh vs Spoiled binary classification
 - **Split**: ~70% train, ~20% validation, ~10% test
-- **Total Images**: ~9,286 images
 
 ## 🔧 Technical Stack
-
 - **Deep Learning**: PyTorch, TorchVision
 - **Object Detection**: YOLOv8 (Ultralytics)
 - **Web Framework**: FastAPI, Uvicorn
@@ -190,21 +184,62 @@ uvicorn app.main:app --reload
 curl -X POST "http://localhost:8000/predict" -F "file=@food_image.jpg"
 ```
 
-## 🔮 Future Enhancements
+## Contributing & Installation Guide
 
-- [ ] Real-time video processing
-- [ ] Mobile app integration
-- [ ] Database integration for food tracking
-- [ ] Advanced data augmentation
-- [ ] Model ensemble methods
-- [ ] Cloud deployment
+### 1. Fork and Clone
+```bash
+# Fork the repo on GitHub first, then clone your fork
+git clone https://github.com/YOUR_USERNAME/fridgespoilagedetection.git
+cd fridgespoilagedetection
+```
 
-## 🤝 Contributing
+### 2. Install Dependencies
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
+**Option A: Automated Setup (Recommended)**
+```bash
+# One-command setup - installs everything
+./setup_environment.sh
+conda activate fridge_detection
+```
+
+**Required Dependencies:**
+- Python 3.9
+- PyTorch & TorchVision
+- OpenCV (cv2)
+- Ultralytics (YOLOv8)
+- FastAPI & Uvicorn
+- Pandas, NumPy, Scikit-learn
+- Pillow, Matplotlib, Seaborn
+
+### 3. Test Installation
+```bash
+# Verify everything works
+python final_test.py
+```
+
+### 4. Create Your Branch
+```bash
+# Always start from latest main
+git checkout main
+git pull origin main
+
+# Create your feature branch
+git checkout -b feature/your-feature-name
+```
+
+### 5. Make Changes & Push
+```bash
+# Make your changes, then:
+git add .
+git commit -m "Add your feature description"
+git push origin feature/your-feature-name
+```
+
+### 6. Create Pull Request
+- Go to your fork on GitHub
+- Click "Compare & pull request"
+- Describe your changes
+- Submit for review
+
 
 
