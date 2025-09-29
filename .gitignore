@@ -17,6 +17,9 @@ venv/
 # 💻 macOS system files
 .DS_Store
 
+# 📊 Ignore dependency reports (generated locally)
+DEPENDENCY_REPORT.md
+
 # 📝 Keep these important files:
 # ✅ data/ - Important datasets
 # ✅ models/ - Trained models for demo
